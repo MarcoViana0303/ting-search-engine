@@ -8,8 +8,8 @@ def txt_importer(path_file):
         file_extension = os.path.splitext(path_file)[1]
         if file_extension != '.txt':
             error_message = "Formato inválido"
-            sys.stderr.write(error_message)
-            return []
+            sys.stderr.write(error_message + '\n')
+            sys.exit()
 
         with open(path_file, 'r') as file:
             lines = file.readlines()
