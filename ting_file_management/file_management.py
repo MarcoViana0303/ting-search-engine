@@ -15,7 +15,7 @@ def txt_importer(path_file):
             return
 
         with open(path_file, 'r') as file:
-            lines = file.readlines()
+            lines = file.read().splitlines()
             return lines
 
     except FileNotFoundError:
