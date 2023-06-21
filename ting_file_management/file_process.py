@@ -5,7 +5,7 @@ from queue import Queue
 def process(path_file, instance):
     """Aqui irá sua implementação"""
     for item in instance.queue:
-        if item[""] == path_file:
+        if item["nome_do_arquivo"] == path_file:
             return
     lines = txt_importer(path_file)
 
@@ -21,6 +21,11 @@ def process(path_file, instance):
 
 def remove(instance):
     """Aqui irá sua implementação"""
+    try:
+        instance.dequeue()
+        print(f"Arquivo {path_file} removido com sucesso")
+    except IndexError:
+        print("Não há elementos")
 
 
 def file_metadata(instance, position):
@@ -28,4 +33,4 @@ def file_metadata(instance, position):
 
 
 queue_instance = Queue()
-process('statics/arquivo_teste.txt', queue_instance)
+process('staqueue_instance)
