@@ -35,3 +35,4 @@ def file_metadata(instance, position):
 
 queue_instance = Queue()
 process('statics/arquivo_teste.txt', queue_instance)
+remove(queue_instance)
