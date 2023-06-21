@@ -22,8 +22,9 @@ def process(path_file, instance):
 def remove(instance):
     """Aqui irá sua implementação"""
     try:
-        instance.dequeue()
-        print(f"Arquivo {path_file} removido com sucesso")
+        file = instance.dequeue()
+        removed = file["nome_do_arquivo"]
+        print(f"Arquivo {removed} removido com sucesso")
     except IndexError:
         print("Não há elementos")
 
@@ -33,4 +34,4 @@ def file_metadata(instance, position):
 
 
 queue_instance = Queue()
-process('staqueue_instance)
+process('statics/arquivo_teste.txt', queue_instance)
