@@ -1,34 +1,30 @@
-from file_management import txt_importer
-from queue import Queue
+from ting_file_management.file_management import txt_importer
+import sys
+
+# if path_file not in instance._queue:
+#     instance.enqueue(path_file)
+#     lines = txt_importer(path_file)
+#     file_data = {
+#         "nome_do_arquivo": path_file,
+#         "qtd_linhas": len(lines),
+#         "linhas_do_arquivo": lines
+#     }
+#     print(file_data)
 
 
 def process(path_file, instance):
     """Aqui irá sua implementação"""
-    if not instance:
-        data = txt_importer(path_file)
-        data_instance = {
-            'nome_do_arquivo': path_file,
-            'qtd_linhas': len(data),
-            'linhas_do_arquivo': data,
-        }
-        instance.enqueue(data_instance)
-        print(data_instance)
-        return data_instance
-
-    for index in range(len(instance)):
-        if instance.search(index)['nome_do_arquivo'] == path_file:
+    for dict in instance._queue:
+        if dict["nome_do_arquivo"] == path_file:
             return None
-
-    data = txt_importer(path_file)
-    data_instance = {
-        'nome_do_arquivo': path_file,
-        'qtd_linhas': len(data),
-        'linhas_do_arquivo': data,
+    doc = txt_importer(path_file)
+    dict_doc = {
+        "nome_do_arquivo": path_file,
+        "qtd_linhas": len(doc),
+        "linhas_do_arquivo": doc,
     }
-
-    instance.enqueue(data_instance)
-    print(data_instance)
-    return data_instance
+    instance.enqueue(dict_doc)
+    print(dict_doc, file=sys.stdout)
 
 
 def remove(instance):
@@ -43,19 +39,3 @@ def remove(instance):
 
 def file_metadata(instance, position):
     """Aqui irá sua implementação"""
-
-
-queue_instance = Queue()
-process('statics/arquivo_teste.txt', queue_instance)
-
-# def process(path_file, instance):
-#     """Aqui irá sua implementação"""
-#     if path_file not in instance._queue:
-#         instance.enqueue(path_file)
-#         lines = txt_importer(path_file)
-#         file_data = {
-#             "nome_do_arquivo": path_file,
-#             "qtd_linhas": len(lines),
-#             "linhas_do_arquivo": lines
-#         }
-#         print(file_data)
