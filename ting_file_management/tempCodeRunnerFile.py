@@ -1,1 +1,0 @@
-process('statics/arquivo_teste.txt', example)
