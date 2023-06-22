@@ -22,6 +22,3 @@ def txt_importer(path_file):
         error_message = f"Arquivo {path_file} não encontrado"
         print(error_message, file=sys.stderr)
         return
-
-
-txt_importer('statics/arquivo_teste.txt')
