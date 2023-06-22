@@ -1,30 +1,20 @@
 from ting_file_management.file_management import txt_importer
 import sys
 
-# if path_file not in instance._queue:
-#     instance.enqueue(path_file)
-#     lines = txt_importer(path_file)
-#     file_data = {
-#         "nome_do_arquivo": path_file,
-#         "qtd_linhas": len(lines),
-#         "linhas_do_arquivo": lines
-#     }
-#     print(file_data)
-
 
 def process(path_file, instance):
     """Aqui irá sua implementação"""
     for dict in instance._queue:
         if dict["nome_do_arquivo"] == path_file:
             return None
-    doc = txt_importer(path_file)
-    dict_doc = {
+    lines = txt_importer(path_file)
+    files_data = {
         "nome_do_arquivo": path_file,
-        "qtd_linhas": len(doc),
-        "linhas_do_arquivo": doc,
+        "qtd_linhas": len(lines),
+        "linhas_do_arquivo": lines,
     }
-    instance.enqueue(dict_doc)
-    print(dict_doc, file=sys.stdout)
+    instance.enqueue(files_data)
+    print(files_data, file=sys.stdout)
 
 
 def remove(instance):
