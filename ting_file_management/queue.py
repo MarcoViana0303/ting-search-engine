@@ -19,9 +19,6 @@ class Queue(AbstractQueue):
         if len(self._queue) == 0:
             return None
         return self._queue.pop(0)
-        #     return self._queue.pop(0)
-        # else:
-        #     raise IndexError("Queue is empty")
 
     def search(self, index):
         """Aqui irá sua implementação"""

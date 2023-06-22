@@ -1,11 +1,12 @@
 from ting_file_management.file_management import txt_importer
 import sys
+# from queue import Queue
 
 
 def process(path_file, instance):
     """Aqui irá sua implementação"""
-    for dict in instance._queue:
-        if dict["nome_do_arquivo"] == path_file:
+    for file in instance._queue:
+        if file["nome_do_arquivo"] == path_file:
             return None
     lines = txt_importer(path_file)
     files_data = {
@@ -21,11 +22,19 @@ def remove(instance):
     """Aqui irá sua implementação"""
     try:
         file = instance.dequeue()
-        removed = file["nome_do_arquivo"]
-        print(f"Arquivo {removed} removido com sucesso")
+        if file is not None:
+            removed = file["nome_do_arquivo"]
+            print(f"Arquivo {removed} removido com sucesso")
+        else:
+            print("Não há elementos")
     except IndexError:
         print("Não há elementos")
 
 
 def file_metadata(instance, position):
     """Aqui irá sua implementação"""
+
+
+# example = Queue()
+# # process('statics/arquivo_teste.txt', example)
+# remove(example)
