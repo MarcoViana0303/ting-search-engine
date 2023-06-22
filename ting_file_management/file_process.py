@@ -1,5 +1,5 @@
 from file_management import txt_importer
-from queue import Queue
+# from queue import Queue
 
 
 def process(path_file, instance):
@@ -29,6 +29,6 @@ def file_metadata(instance, position):
     """Aqui irá sua implementação"""
 
 
-queue_instance = Queue()
-process('statics/arquivo_teste.txt', queue_instance)
+# queue_instance = Queue()
+# process('statics/arquivo_teste.txt', queue_instance)
 # remove(queue_instance)
