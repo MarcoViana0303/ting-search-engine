@@ -12,7 +12,7 @@ import sys
 # except FileNotFoundError:
 #     error_message = f"Arquivo {path_file} não encontrado"
 #     print(error_message, file=sys.stderr)
-#     return
+#     retur
 
 
 def txt_importer(path_file):
