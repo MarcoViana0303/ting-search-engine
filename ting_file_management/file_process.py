@@ -33,8 +33,14 @@ def remove(instance):
 
 def file_metadata(instance, position):
     """Aqui irá sua implementação"""
+    try:
+        files_data = instance.search(position)
+        print(files_data, file=sys.stdout)
+    except IndexError:
+        print("Posição inválida")
+        return None
 
 
 # example = Queue()
-# # process('statics/arquivo_teste.txt', example)
-# remove(example)
+# process('statics/arquivo_teste.txt', example)
+# file_metadata(example, 0)
