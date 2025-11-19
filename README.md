@@ -1,5 +1,5 @@
 <h3 align="center">
-  Projeto TING (Trybe Is Not Google)
+  Projeto TING
   <br /><br />
 </h3>
 
